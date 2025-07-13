@@ -1,6 +1,18 @@
 package CharPractice;
 
 import java.util.Scanner;
+/*
+1- PRINTAR CARACTERES LETRAS MINUSCULAS
+
+Mediante un bucle de que recorre tipos char, imprime todas las letras minúsculas de la 'a' a la 'z'.
++EXTRA: imprimir las mayúsculas y las minúsculas sin los signos entre medio.
+
+2- PRINTAR CARACTER SEGUN NUMERO
+
+Pides al usuario que escriba un número entre el 33 y el 126, y le muestras el carácter que le corresponde. Ejemplo:
+Numero de usuario: 65.  Muestras la A mayúscula.
+
+ */
 
 public class Char {
     public static void main(String[] args) {

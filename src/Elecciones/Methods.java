@@ -16,7 +16,7 @@ public class Methods {
             String barra = String.valueOf(symbol).repeat(bloques);
 
 //            podría hacer un ifelseo de los porcentajes para que muestren una cantidad de barras acordes ¿con colores?
-            System.out.println(ps.getName() + " " + barra + " " + ps.getPercentage());
+            System.out.println(ps.getName() + " " + barra + " " + ps.getPercentage() + "%");
 
 
         }
