@@ -66,6 +66,26 @@ do{
             System.out.println("Introduce el nuevo partido");
             String name = sc.nextLine();
             list.add(new Partidos(name, 0));
+            Thread.sleep(1000);
+            System.out.println("Partido introducido con éxito");
+            Methods.aprietaEnter();
+            break;
+        case "R":
+            System.out.println("Introduce el partido del que quieres introducir el porcentaje:");
+            String partit = sc.nextLine();
+            boolean find = false;
+            for(Partidos ps: list){
+               if(ps.getName().equalsIgnoreCase(partit));
+               find = true;
+            }
+            if(find == true){
+                System.out.println("Introduce el porcentaje:");
+                int newPercent = sc.nextInt();
+                sc.nextLine();
+                for(Partidos ps: list){
+                    ps.setPercentage(newPercent);
+                }
+            }
             break;
         case "V":
             System.out.println("Estos son los resultados por porcentaje:");
@@ -75,9 +95,14 @@ do{
             System.out.println("Estos son los resultados en barra");
             Methods.barraPorcentaje(list);
             break;
+        default:
+            System.out.println("Por favor, selecciona una opción válida");
+            break;
     }
 
 }while(!answer.equalsIgnoreCase("s"));
+
+        Methods.limpiarPantalla();
 
 sc.close();
     }

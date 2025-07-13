@@ -41,12 +41,17 @@ public static void aprietaEnter(){
 
     public static void limpiarPantalla(){
        Scanner sc = new Scanner(System.in);
-        System.out.println("Pulsa 'c' para limpiar la pantalla");
+        System.out.println("Pulsa 'c' para limpiar la pantalla o pulsa cualquier tecla para continuar");
         String salir = sc.nextLine();
-        if(salir.equalsIgnoreCase("c"));
-        for (int i = 0; i < 100; i++) {
-            System.out.println();
-        }
+        if(salir.equalsIgnoreCase("c")){
+            for (int i = 0; i < 100; i++) {
+                System.out.println();
+            }
+        }else{
+            System.out.println("Perfecto, seguiremos con las operaciones realizadas a la vista");
+        };
+
+
         sc.close();
     }
 
