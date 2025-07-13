@@ -12,7 +12,10 @@ Pedir el porcentaje de votos recibido para cada uno de los partidos.
 Impide que se escriba un tipo diferente mediante hasNext() (ej: si se pide un entero, usar teclado.hasNextInt() )
 Cuando estén introducidos todos los resultados, crear un méthod que muestre barras de resultado para cada uno de los participantes.
 Puedes escoger cualquier carácter alfanumérico habitual, como *, o #.
-Cuando acabe que pregunte: ¿Actualizar resultados (S/N)? Si dice que sí, limpia el terminal y vuelve a preguntar los resultados. Si dice que no, limpia el terminal y escribe “hasta la próxima!” y se acaba el programa. Debe existir una clase Metodos, que contenga los métodos:
+
+Cuando acabe que pregunte: ¿Actualizar resultados (S/N)? Si dice que sí, limpia el terminal y vuelve a preguntar los resultados.
+Si dice que no, limpia el terminal y escribe “hasta la próxima!” y se acaba el programa.
+Debe existir una clase Metodos, que contenga los métodos:
 
 - mostrarResultado()
 
@@ -63,28 +66,28 @@ do{
             System.out.println("Gracias por participar. ¡Hasta la próxima!");
             break;
         case "P":
-            System.out.println("Introduce el nuevo partido");
+            System.out.println("Introduce el nuevo partido; porcentaje inicial de votos = '0'");
             String name = sc.nextLine();
             list.add(new Partidos(name, 0));
             Thread.sleep(1000);
             System.out.println("Partido introducido con éxito");
-            Methods.aprietaEnter();
             break;
         case "R":
             System.out.println("Introduce el partido del que quieres introducir el porcentaje:");
             String partit = sc.nextLine();
             boolean find = false;
+
             for(Partidos ps: list){
-               if(ps.getName().equalsIgnoreCase(partit));
-               find = true;
+               if(ps.getName().equalsIgnoreCase(partit)){
+                   find = true;
+                   System.out.println("Introduce el porcentaje:");
+                   int newPercent = sc.nextInt();
+                   sc.nextLine();
+                   ps.setPercentage(newPercent);
+               }
             }
-            if(find == true){
-                System.out.println("Introduce el porcentaje:");
-                int newPercent = sc.nextInt();
-                sc.nextLine();
-                for(Partidos ps: list){
-                    ps.setPercentage(newPercent);
-                }
+            if(!find){
+                System.out.println("Partido no encontrado");
             }
             break;
         case "V":

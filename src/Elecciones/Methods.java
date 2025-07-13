@@ -9,7 +9,6 @@ public class Methods {
         char symbol = '█';
         int maxSymbol = 10;
 
-
         for(Partidos ps: list){
            int porcentaje =  ps.getPercentage();
             int bloques = Math.round(porcentaje * maxSymbol) / 100;
@@ -18,11 +17,9 @@ public class Methods {
 //            podría hacer un ifelseo de los porcentajes para que muestren una cantidad de barras acordes ¿con colores?
             System.out.println(ps.getName() + " " + barra + " " + ps.getPercentage() + "%");
 
-
         }
 
     }
-
 
 
     public static void mostrarResultado(ArrayList<Partidos> list) {
